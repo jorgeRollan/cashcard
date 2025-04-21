@@ -25,6 +25,8 @@ class CashCardApplicationTests {
 		DocumentContext documentContext = JsonPath.parse(response.getBody());
 		System.out.println(response.getBody());
 		Number id = documentContext.read("$.id");
-		assertThat(id).isNotNull();
+		assertThat(id).isEqualTo(99);
+		Number amount = documentContext.read("$.amount");
+		assertThat(amount).isEqualTo(123.45);
     }
 }
