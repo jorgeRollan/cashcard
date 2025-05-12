@@ -185,6 +185,7 @@ class CashCardApplicationTests {
 				.withBasicAuth("sarah1", "abc123")
 				.exchange("/cashcards/99999", HttpMethod.PUT, request, Void.class);
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+	}
 
 	@Test
 	void shouldNotUpdateACashCardThatIsOwnedBySomeoneElse() {
